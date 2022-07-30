@@ -9,17 +9,27 @@
 }
 
 .nav_link{
-    color: #04447b;
+    color: #02577a;
     letter-spacing: 1px;
     font-weight: 500;
     text-decoration: none;
-    margin-right: 30px;
+    padding: 0 30px;
+    transition: all .2s;
+}
+
+.nav_link:hover{
+    color: #00b7c2;
 }
 
 .nav_link_active{
-    color: #0EC8FB;
+    color: #00b7c2;
     letter-spacing: 1px;
     font-weight: 500;
     text-decoration: none;
-    margin-right: 30px;
+    padding: 0 30px;
+}
+
+@media screen and (max-width: 450px) {
+    .nav_link{ padding: 0 15px;}
+    .nav_link_active{ padding: 0 15px;}
 }
