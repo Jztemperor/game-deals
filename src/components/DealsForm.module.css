@@ -1,0 +1,94 @@
+
+
+.header_container{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_container > h1 {
+    font-size: 40px;
+    font-weight: 300;
+    color: #FDDEC3;
+}
+
+.header_icon{
+    width: 30px;
+    margin-left: 5px;
+}
+
+.form_container{
+    margin-top: 30px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.input_group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    width: 15%;
+}
+
+.input_group > label {
+    color: #FDDEC3;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.input_group > input {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #02577a;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    font-size: 12px;
+    text-align: center;
+   
+}
+
+.input_group > input:focus{
+    border-bottom: 2px solid #07c8f9;
+}
+
+.submit{
+    align-self: flex-end;
+    justify-self: center;
+    width: 5rem;
+    height: 2rem;
+    border: none;
+    outline: none;
+    background: #07c8f9;
+    color: #02577a;
+    font-size: 12px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Disable arrows on input fields. */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

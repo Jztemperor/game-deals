@@ -18,11 +18,11 @@
 }
 
 .nav_link:hover{
-    color: #00b7c2;
+    color: #07c8f9;
 }
 
 .nav_link_active{
-    color: #00b7c2;
+    color: #07c8f9;
     letter-spacing: 1px;
     font-weight: 500;
     text-decoration: none;
