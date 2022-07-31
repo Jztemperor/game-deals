@@ -1,8 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, FC } from 'react';
 import styles from './DealsForm.module.css';
 import search from '../img/search.svg';
 
-const DealsForm = () => {
+const DealsForm: FC = () => {
   return (
     <Fragment>
       <div className={styles.header_container}>

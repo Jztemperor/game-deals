@@ -20,7 +20,7 @@
 }
 
 .form_container{
-    margin-top: 30px;
+    margin-top: 30px; 
 }
 
 form {
@@ -28,6 +28,7 @@ form {
     justify-content: center;
     align-items: center;
     
+   
 }
 
 .input_group{
@@ -35,8 +36,7 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
-    width: 15%;
+    margin-right: 30px;
 }
 
 .input_group > label {
@@ -48,7 +48,7 @@ form {
 
 .input_group > input {
     font-family: inherit;
-    width: 100%;
+    min-width: 200px;
     border: 0;
     border-bottom: 2px solid #02577a;
     outline: 0;
@@ -58,8 +58,7 @@ form {
     background: transparent;
     transition: border-color 0.2s;
     font-size: 12px;
-    text-align: center;
-   
+    text-align: center;  
 }
 
 .input_group > input:focus{
@@ -91,4 +90,36 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
+}
+
+@media screen  and (max-width: 600px){
+    .header_container > h1 {
+        font-size: 30px;
+    }
+}
+
+@media screen  and (max-width: 550px){
+    form{
+        flex-wrap: wrap;
+    }
+
+    .input_group{
+        margin-bottom: 25px;
+    }
+
+    .input_group:last-of-type{
+        margin-right: 0;
+    }
+
+  .submit{
+        flex-basis: 50%;
+        width: 30% !important;
+    }   
+}
+
+@media screen and (max-width: 450px){
+    .input_group > input{
+        min-width: 0;
+        width: 150px;
+    }
 }
