@@ -40,7 +40,7 @@ const Deals: FC = () => {
   return (
     <div className={styles.container}>
       <DealsForm></DealsForm>
-      <DealsList></DealsList>
+      <DealsList deals={deals}></DealsList>
     </div>
   );
 };
