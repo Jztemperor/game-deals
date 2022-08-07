@@ -2,7 +2,6 @@
     background-color: #3b2e5a; 
     border-radius: 10px;
     margin: 15px;
-    width: calc(33.3333% - 30px);
     height: 15rem;
 
     display: flex;
@@ -71,15 +70,3 @@
     align-items: center;
 }
 
-@media screen and (max-width: 900px){
-    .container{
-        width: calc(50% - 30px);
-    }
-}
-
-
-@media screen and (max-width: 450px){
-    .container{
-        width: 100%;
-    }
-}
