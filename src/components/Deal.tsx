@@ -10,6 +10,7 @@ const Deal: FC<Props> = ({ deal }) => {
   console.log(deal);
   return (
     <div className={styles.container}>
+      <span className={styles.savings}>-{Math.round(deal.savings)}%</span>
       <h5 className={styles.title}>{deal.title}</h5>
       <div className={styles.info_container}>
         <div className={styles.info_container_text}>
