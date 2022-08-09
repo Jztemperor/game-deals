@@ -1,3 +1,11 @@
-.container{
-    margin-top: 50px;
+.container {
+  margin-top: 50px;
+}
+
+.spinner_container {
+  height: 55vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

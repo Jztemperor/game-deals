@@ -4,6 +4,7 @@ import { IDeals } from '../interfaces/IDeals';
 import styles from './Deals.module.css';
 import DealsForm from './DealsForm';
 import DealsList from './DealsList';
+import Spinner from './utility/Spinner';
 
 const Deals: FC = () => {
   const [deals, setDeals] = useState<IDeals[]>([]);
@@ -40,7 +41,13 @@ const Deals: FC = () => {
   return (
     <div className={styles.container}>
       <DealsForm></DealsForm>
-      <DealsList deals={deals}></DealsList>
+      {deals.length > 0 ? (
+        <DealsList deals={deals}></DealsList>
+      ) : (
+        <div className={styles.spinner_container}>
+          <Spinner></Spinner>
+        </div>
+      )}
     </div>
   );
 };
