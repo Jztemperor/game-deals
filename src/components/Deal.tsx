@@ -1,13 +1,12 @@
 import React, { FC } from 'react';
 import styles from './Deal.module.css';
-import { IDeals } from '../interfaces/IDeals';
+import { IDeals } from '../interfaces';
 
 interface Props {
   deal: IDeals;
 }
 
 const Deal: FC<Props> = ({ deal }) => {
-  console.log(deal);
   return (
     <div className={styles.container}>
       <span className={styles.savings}>-{Math.round(deal.savings)}%</span>

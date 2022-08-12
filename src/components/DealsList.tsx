@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IDeals } from '../interfaces/IDeals';
+import { IDeals } from '../interfaces';
 import Deal from './Deal';
 import styles from './DealsList.module.css';
 

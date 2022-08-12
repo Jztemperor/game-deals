@@ -1,8 +1,26 @@
-import React, { Fragment, FC } from 'react';
+import React, { Fragment, useState } from 'react';
 import styles from './DealsForm.module.css';
 import search from '../img/search.svg';
+import { SearchData } from '../types';
 
-const DealsForm: FC = () => {
+interface Props {
+  handleSearch: (searchData: SearchData) => void;
+}
+
+const DealsForm = ({ handleSearch }: Props) => {
+  const [title, setTitle] = useState<string>('');
+  const [minPrice, setMinPrice] = useState<number>();
+
+  // Passes form data to "Deals" component
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData: SearchData = {
+      title: title,
+      minPrice: minPrice,
+    };
+    handleSearch(formData);
+  };
+
   return (
     <Fragment>
       <div className={styles.header_container}>
@@ -12,7 +30,7 @@ const DealsForm: FC = () => {
         </h1>
       </div>
       <div className={styles.form_container}>
-        <form action="">
+        <form onSubmit={onSubmit}>
           <div className={styles.input_group}>
             <label htmlFor="title">Game title</label>
             <input
@@ -20,6 +38,7 @@ const DealsForm: FC = () => {
               name="title"
               id="title"
               placeholder="Search a game by name"
+              onChange={(e) => setTitle(e.target.value)}
               required
             />
           </div>
@@ -30,6 +49,7 @@ const DealsForm: FC = () => {
               name="minPrice"
               id="minPrice"
               placeholder="Minimum price (optional)"
+              onChange={(e) => setMinPrice(parseInt(e.target.value))}
             />
           </div>
           <button className={styles.submit} type="submit">
