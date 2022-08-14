@@ -1,0 +1,28 @@
+.reset_btn{
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   transition: all 1.8s;
+   font-size: 50px;
+   color: #f2f2f2;
+   background-color: #00b7c2;
+   border-radius: 50%;
+   padding: 10px;
+   cursor: pointer;
+}
+
+
+.rotate {
+    animation: rotation 1.8s;
+  }
+  
+  @keyframes rotation{
+    from{
+        transform: rotate(0);
+    }
+  
+    to {
+        transform: rotate(720deg);
+    }
+  
+  }

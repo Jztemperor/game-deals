@@ -1,5 +1,6 @@
 .container {
   margin-top: 50px;
+  position: relative;
 }
 
 .spinner_container {
@@ -8,4 +9,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.visible{
+  visibility: visible;
+}
+
+.hidden{
+  visibility: hidden;
 }

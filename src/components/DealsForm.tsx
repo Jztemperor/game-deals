@@ -19,6 +19,8 @@ const DealsForm = ({ handleSearch }: Props) => {
       minPrice: minPrice,
     };
     handleSearch(formData);
+    setTitle('');
+    setMinPrice(NaN);
   };
 
   return (
@@ -39,6 +41,7 @@ const DealsForm = ({ handleSearch }: Props) => {
               id="title"
               placeholder="Search a game by name"
               onChange={(e) => setTitle(e.target.value)}
+              value={title}
               required
             />
           </div>
@@ -50,6 +53,7 @@ const DealsForm = ({ handleSearch }: Props) => {
               id="minPrice"
               placeholder="Minimum price (optional)"
               onChange={(e) => setMinPrice(parseInt(e.target.value))}
+              value={minPrice}
             />
           </div>
           <button className={styles.submit} type="submit">

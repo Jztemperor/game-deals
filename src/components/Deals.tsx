@@ -6,13 +6,16 @@ import DealsForm from './DealsForm';
 import DealsList from './DealsList';
 import Spinner from './utility/Spinner';
 import { SearchData } from '../types';
+import Reset from './utility/Reset';
 
 const Deals: FC = () => {
   const [deals, setDeals] = useState<IDeals[]>([]);
+  const [resetVisible, setResetVisible] = useState<boolean>(false);
 
-  // Utility function to get game deals with optional user provided parameters.
+  //Get game deals with optional user provided parameters.
   const getDeals = async (title?: string, minPrice?: number) => {
     try {
+      // Get deals sorted by how good the deal rating is
       const res = await axios.get('https://www.cheapshark.com/api/1.0/deals', {
         params: {
           ...(title && {
@@ -21,6 +24,7 @@ const Deals: FC = () => {
           ...(minPrice && {
             upperPrice: minPrice,
           }),
+          sortBy: 'Deal Rating',
         },
       });
 
@@ -53,6 +57,15 @@ const Deals: FC = () => {
   const handleSearch = (searchData: SearchData): void => {
     const { title, minPrice } = searchData;
     getDeals(title, minPrice);
+    setResetVisible(true);
+  };
+
+  // Reset deals
+  const resetDeals = () => {
+    setTimeout(() => {
+      getDeals();
+    }, 1700);
+    setResetVisible(false);
   };
 
   return (
@@ -65,6 +78,7 @@ const Deals: FC = () => {
           <Spinner></Spinner>
         </div>
       )}
+      <Reset onClick={resetDeals} className={resetVisible ? styles.visible : styles.hidden}></Reset>
     </div>
   );
 };
