@@ -7,15 +7,19 @@ import DealsList from './DealsList';
 import Spinner from './utility/Spinner';
 import { SearchData } from '../types';
 import Reset from './utility/Reset';
+import SearchFailed from './utility/SearchFailed';
 
 const Deals: FC = () => {
   const [deals, setDeals] = useState<IDeals[]>([]);
   const [resetVisible, setResetVisible] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
 
   //Get game deals with optional user provided parameters.
   const getDeals = async (title?: string, minPrice?: number) => {
     try {
       // Get deals sorted by how good the deal rating is
+      setLoading(true);
       const res = await axios.get('https://www.cheapshark.com/api/1.0/deals', {
         params: {
           ...(title && {
@@ -27,6 +31,11 @@ const Deals: FC = () => {
           sortBy: 'Deal Rating',
         },
       });
+
+      // Check if we got any data
+      if (res.data) {
+        setLoading(false);
+      }
 
       const deals: IDeals[] = [];
       res.data.map((deal: any) => {
@@ -41,6 +50,8 @@ const Deals: FC = () => {
 
       setDeals(deals);
     } catch (error) {
+      setLoading(false);
+      setError(true);
       if (error instanceof Error) {
         console.error(error);
       } else {
@@ -62,22 +73,26 @@ const Deals: FC = () => {
 
   // Reset deals
   const resetDeals = () => {
-    setTimeout(() => {
-      getDeals();
-    }, 1700);
+    getDeals();
     setResetVisible(false);
   };
 
   return (
     <div className={styles.container}>
       <DealsForm handleSearch={handleSearch}></DealsForm>
-      {deals.length > 0 ? (
-        <DealsList deals={deals}></DealsList>
-      ) : (
+
+      {loading ? (
         <div className={styles.spinner_container}>
           <Spinner></Spinner>
         </div>
+      ) : error || deals.length === 0 ? (
+        <div className={styles.spinner_container}>
+          <SearchFailed></SearchFailed>
+        </div>
+      ) : (
+        <DealsList deals={deals}></DealsList>
       )}
+
       <Reset onClick={resetDeals} className={resetVisible ? styles.visible : styles.hidden}></Reset>
     </div>
   );
