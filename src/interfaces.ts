@@ -5,3 +5,9 @@ export interface IDeals {
   thumb: string;
   title: string;
 }
+
+export interface IStores {
+  storeID: string;
+  storeName: string;
+  image: string;
+}
