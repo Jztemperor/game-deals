@@ -3,7 +3,6 @@
     margin: 15px;
     height: 15rem;
 
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,3 +10,8 @@
     background-color: #3b2e5a; 
     
 }
+
+.container > img {
+    width: 60%;
+}
+
