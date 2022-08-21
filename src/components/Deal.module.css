@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    
 }
 
 .savings{
@@ -64,7 +63,7 @@
 
 
 .price{
-    color: #6f95bc;
+    color: #07c8f9;
 }
 
 .btn:link,
