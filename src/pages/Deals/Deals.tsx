@@ -1,13 +1,13 @@
 import React, { FC, useEffect, useState } from 'react';
 import axios from 'axios';
-import { IDeals } from '../interfaces';
+import { IDeals } from '../../interfaces';
 import styles from './Deals.module.css';
-import DealsForm from './DealsForm';
-import DealsList from './DealsList';
-import Spinner from './utility/Spinner';
-import { SearchData } from '../types';
-import Reset from './utility/Reset';
-import SearchFailed from './utility/SearchFailed';
+import DealsForm from '../../components/DealsForm/DealsForm';
+import DealsList from '../../components/DealsList/DealsList';
+import Spinner from '../../components/utility/Spinner';
+import { SearchData } from '../../types';
+import Reset from '../../components/utility/Reset';
+import SearchFailed from '../../components/utility/SearchFailed';
 
 const Deals: FC = () => {
   const [deals, setDeals] = useState<IDeals[]>([]);

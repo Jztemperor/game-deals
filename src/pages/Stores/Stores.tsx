@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Stores.module.css';
-import { IStores } from '../interfaces';
+import { IStores } from '../../interfaces';
 import axios from 'axios';
-import Store from './Store';
-import Spinner from './utility/Spinner';
-import SearchFailed from './utility/SearchFailed';
+import Store from '../../components/Store/Store';
+import Spinner from '../../components/utility/Spinner';
+import SearchFailed from '../../components/utility/SearchFailed';
 
 const Stores = () => {
   const [stores, setStores] = useState<IStores[]>([]);
@@ -27,7 +27,7 @@ const Stores = () => {
         stores.push({
           storeID: store.storeID,
           storeName: store.storeName,
-          image: store.images.banner,
+          image: store.images.logo,
         });
       });
 

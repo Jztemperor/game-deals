@@ -1,5 +1,5 @@
 import React from 'react';
-import { IStores } from '../interfaces';
+import { IStores } from '../../interfaces';
 import styles from './Store.module.css';
 
 interface Props {

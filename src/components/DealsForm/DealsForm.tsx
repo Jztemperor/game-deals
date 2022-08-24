@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import styles from './DealsForm.module.css';
-import search from '../img/search.svg';
-import { SearchData } from '../types';
+import search from '../../img/search.svg';
+import { SearchData } from '../../types';
 
 interface Props {
   handleSearch: (searchData: SearchData) => void;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './Deal.module.css';
-import { IDeals } from '../interfaces';
+import { IDeals } from '../../interfaces';
 
 interface Props {
   deal: IDeals;
